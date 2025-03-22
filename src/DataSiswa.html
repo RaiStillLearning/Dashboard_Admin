@@ -10,7 +10,7 @@
     />
     <link
       rel="stylesheet"
-      href="components/node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="custom.css" />
 
@@ -78,6 +78,54 @@
           <a href="beranda.html" class="text-dark">Beranda</a>
         </div>
         <div class="menu-item">
+          <a href="#" class="text-dark">
+            <div class="menu-item dropdown">
+              <i class="fa-solid fa-file-lines"></i>
+              <a
+                href="#"
+                class="text-dark dropdown-toggle"
+                id="nilaiDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Informasi Data
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="nilaiDropdown">
+                <li>
+                  <a class="dropdown-item" href="indentitas.html"
+                    ><i class="fa-solid fa-list-ul"></i>Identitas Sekolah</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="DataSiswa.html"
+                    ><i class="fa-solid fa-list-ul"></i>Data Siswa</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="DataGuru.html"
+                    ><i class="fa-solid fa-list-ul"></i>Data Guru</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Intrakurikuler.html"
+                    ><i class="fa-solid fa-list-ul"></i>Intrakurikuler</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ekstrakurikuler.html"
+                    ><i class="fa-solid fa-list-ul"></i>Esktrakurikuler</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="MuatanLokal.html"
+                    ><i class="fa-solid fa-list-ul"></i>Muatan Lokal</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </a>
+        </div>
+        <div class="menu-item">
           <a href="refrensi.html" class="text-dark">
             <div class="menu-item dropdown">
               <i class="fa-solid fa-book"></i>
@@ -88,14 +136,9 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Refrensi
+                Data Nilai
               </a>
               <ul class="dropdown-menu" aria-labelledby="nilaiDropdown">
-                <li>
-                  <a class="dropdown-item" href="refrensi.html"
-                    ><i class="fa-solid fa-list-ul"></i>Daftar Siswa</a
-                  >
-                </li>
                 <li>
                   <a class="dropdown-item" href="TujuanPembelajaran.html"
                     ><i class="fa-solid fa-list-ul"></i>Tujuan Pembelajaran</a
@@ -104,35 +147,6 @@
                 <li>
                   <a class="dropdown-item" href="LingkupMateri.html"
                     ><i class="fa-solid fa-list-ul"></i>Lingkup Materi</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="#" class="text-dark">
-            <div class="menu-item dropdown">
-              <i class="fa-solid fa-file-lines"></i>
-
-              <a
-                href="#"
-                class="text-dark dropdown-toggle"
-                id="nilaiDropdown"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Nilai Akademik
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="nilaiDropdown">
-                <li>
-                  <a class="dropdown-item" href="AsesmenSumatif.html"
-                    ><i class="fa-solid fa-list-ul"></i>Asesmen Sumatif</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="AsesmenFormatif.html"
-                    ><i class="fa-solid fa-list-ul"></i>Asesmen Formatif</a
                   >
                 </li>
                 <li>
@@ -144,16 +158,20 @@
             </div>
           </a>
         </div>
+
         <div class="menu-item">
           <i class="fa-solid fa-book-open"></i>
           <a href="rapot.html" class="text-dark">Rapot</a>
         </div>
         <div class="menu-item">
-          <i class="fa-solid fa-user"></i>
-          <a href="profile_pengguna.html" class="text-dark">Profile Pengguna</a>
+          <i class="fa-solid fa-book-open"></i>
+          <a href="Mutasi.html" class="text-dark">Mutasi</a>
+        </div>
+        <div class="menu-item">
+          <i class="fa-solid fa-book-open"></i>
+          <a href="BukuInduk.html" class="text-dark">Buku Induk</a>
         </div>
       </aside>
-
       <!-- Tombol Toggle (selalu terlihat) -->
       <button class="toggle-btn" id="toggleBtn">
         <i class="fa-solid fa-chevron-left"></i>
@@ -162,11 +180,6 @@
       <!-- Konten utama di kanan -->
       <div class="main-content">
         <div class="sidebar-content d-flex">
-          <p>
-            Beranda | <i class="fa-solid fa-book"></i> Referensi> Tujuan
-            Pembelajaran
-          </p>
-
           <button
             class="btn btn-primary ms-auto mb-4"
             id="ButtonTambah"
@@ -180,9 +193,10 @@
             <thead>
               <tr>
                 <td>No</td>
-                <td>Tingkat</td>
-                <td>Tujuan Pembelajaran</td>
-                <td>Aksi</td>
+                <td>NIS</td>
+                <td>NISN</td>
+                <td>NAMA PESERTA DIDIK</td>
+                <td>AKSI</td>
               </tr>
             </thead>
             <tbody>
@@ -192,13 +206,8 @@
         </div>
       </div>
     </section>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.min.js"
-      integrity="sha512-..."
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="TujuanPembelajaranTable.js"></script>
-    <script src="components/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/DataSiswa.js"></script>
   </body>
 </html>

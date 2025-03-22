@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beranda - E-Rapor Ghama Charaka</title>
+    <title>E-Rapor Ghama Charaka</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-     <link
+    <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
@@ -52,13 +52,11 @@
   <body>
     <!-- Header dengan Nav -->
     <header>
-      <a href="profile-pengguna.html"
-        ><i class="fa-solid fa-user user-login"></i
-      ></a>
+      <a href="#"><i class="fa-solid fa-user user-login"></i></a>
       <nav class="navbar navbar-light bg-light">
         <div class="container">
           <div class="d-flex flex-column flex-md-row align-items-center w-100">
-            <a class="navbar-brand" href="beranda.html">
+            <a class="navbar-brand" href="#">
               <img
                 src="assets/ghama_caraka_logo-removebg-preview.png"
                 alt="Logo Ghama Caraka"
@@ -173,92 +171,84 @@
           <i class="fa-solid fa-book-open"></i>
           <a href="BukuInduk.html" class="text-dark">Buku Induk</a>
         </div>
-        
       </aside>
 
-      <!-- Tombol Toggle -->
+      <!-- Tombol Toggle (selalu terlihat) -->
       <button class="toggle-btn" id="toggleBtn">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
 
-      <!-- Konten utama -->
+      <!-- Konten utama di kanan -->
       <div class="main-content">
         <div class="sidebar-content">
-          <h1>Identitas Sekolah</h1>
-        </div>
-        <div class="table-chart bg-light p-3">
-          <div class="container">
-            <div class="row d-flex">
-              <div class="col-12 d-flex flex-wrap justify-content-center gap-3">
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">Lokasi</h4>
-                      <p class="text-white">Jl. Raya Grogol No.3, Grogol,
-                        Kec. Limo, Kota Depok, 
-                       Jawa Barat 16512</p>
-                    </button>
-                  </a>
-                </div>
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">Nama Sekolah</h4>
-                        <p class="text-white"> SMK INDUSTRI KREATIF 
-                          GHAMA CARAKA</p>
-                  </a>
-                </div>
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">Media</h4>
-                     <a href="" class="text-white">https://sekolahghama.com/</a>
-                     <a href="" class="text-white">ghamacarakaofficial@gmail.com</a>
-                    </button>
-                  </a>
-                </div>
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">KEPALA SEKOLAH</h4>
-                      <p class="text-white">Agus Mulyadi, Sa.g</p>
-                    </button>
-                  </a>
-                </div>
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">JURUSAN</h4>
-                      <p class="text-white">BCF/PPLG</p>
-                    </button>
-                  </a>
-                </div>
-                
+          <div class="header-asesmen">
+           
+            <div class="header-formatif d-flex">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  X
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">X</a></li>
+                  <li><a class="dropdown-item" href="#">XI</a></li>
+                  <li><a class="dropdown-item" href="#">XII</a></li>
+                </ul>
               </div>
+              <button class="btn btn-primary ms-auto" id="ButtonTambah">
+                Tambah Data
+              </button>
             </div>
           </div>
+          <h2 class="text-center">Lingkup Materi</h2>
         </div>
+
+        <!-- Alert Container (untuk notifikasi aksi) -->
+        <div id="alertContainer"></div>
+
+        <!-- Tabel dengan 3 baris header -->
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="3">No.</th>
+              <th rowspan="3">Nama Siswa</th>
+              <th colspan="6">Tujuan Pembelajaran</th>
+              <th rowspan="3">Deskripsi Capaian Tertinggi dalam Rapor</th>
+              <th rowspan="3">Deskripsi Capaian Terendah dalam Rapor</th>
+              <th rowspan="3">Aksi</th>
+            </tr>
+            <tr>
+              <th colspan="2">TP 1</th>
+              <th colspan="2">TP 2</th>
+              <th colspan="2">TP 3</th>
+            </tr>
+            <tr>
+              <th>KKTP</th>
+              <th>Tampil/Tidak</th>
+              <th>KKTP</th>
+              <th>Tampil/Tidak</th>
+              <th>KKTP</th>
+              <th>Tampil/Tidak</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Baris data akan di-generate via JavaScript -->
+          </tbody>
+        </table>
       </div>
     </section>
-
-    <!-- Scripts -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.min.js"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/LingkupMateri.js"></script>
     <script src="js/sidebar.js"></script>
-    <script src="js/beranda.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

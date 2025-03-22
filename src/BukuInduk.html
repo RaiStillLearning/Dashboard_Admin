@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beranda - E-Rapor Ghama Charaka</title>
+    <title>E-Rapor Ghama Charaka</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-     <link
+    <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
@@ -52,13 +52,11 @@
   <body>
     <!-- Header dengan Nav -->
     <header>
-      <a href="profile-pengguna.html"
-        ><i class="fa-solid fa-user user-login"></i
-      ></a>
+      <a href="#"><i class="fa-solid fa-user user-login"></i></a>
       <nav class="navbar navbar-light bg-light">
         <div class="container">
           <div class="d-flex flex-column flex-md-row align-items-center w-100">
-            <a class="navbar-brand" href="beranda.html">
+            <a class="navbar-brand" href="#">
               <img
                 src="assets/ghama_caraka_logo-removebg-preview.png"
                 alt="Logo Ghama Caraka"
@@ -173,92 +171,63 @@
           <i class="fa-solid fa-book-open"></i>
           <a href="BukuInduk.html" class="text-dark">Buku Induk</a>
         </div>
-        
       </aside>
 
-      <!-- Tombol Toggle -->
+      <!-- Tombol Toggle (selalu terlihat) -->
       <button class="toggle-btn" id="toggleBtn">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
 
-      <!-- Konten utama -->
-      <div class="main-content">
+      <!-- Konten utama di kanan -->
+      <div class="main-content" id="main-content">
         <div class="sidebar-content">
-          <h1>Identitas Sekolah</h1>
+          <h1>Buku Induk</h1>
         </div>
         <div class="table-chart bg-light p-3">
-          <div class="container">
-            <div class="row d-flex">
-              <div class="col-12 d-flex flex-wrap justify-content-center gap-3">
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">Lokasi</h4>
-                      <p class="text-white">Jl. Raya Grogol No.3, Grogol,
-                        Kec. Limo, Kota Depok, 
-                       Jawa Barat 16512</p>
-                    </button>
-                  </a>
-                </div>
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">Nama Sekolah</h4>
-                        <p class="text-white"> SMK INDUSTRI KREATIF 
-                          GHAMA CARAKA</p>
-                  </a>
-                </div>
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">Media</h4>
-                     <a href="" class="text-white">https://sekolahghama.com/</a>
-                     <a href="" class="text-white">ghamacarakaofficial@gmail.com</a>
-                    </button>
-                  </a>
-                </div>
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">KEPALA SEKOLAH</h4>
-                      <p class="text-white">Agus Mulyadi, Sa.g</p>
-                    </button>
-                  </a>
-                </div>
-                <div class="col-sm-4">
-                  <a href="">
-                    <button
-                      class="button-beranda btn w-100"
-                      style="background-color: #d80000"
-                    >
-                      <h4 class="text-white">JURUSAN</h4>
-                      <p class="text-white">BCF/PPLG</p>
-                    </button>
-                  </a>
-                </div>
-                
+          <div class="container mt-4">
+            <!-- Bagian Header -->
+
+            <!-- Form -->
+            <div class="card p-4">
+              <div class="mb-3">
+                <label for="selectTingkat" class="form-label">Tingkat</label>
+                <select id="selectTingkat" class="form-select">
+                  <option value="">Pilih Tingkat</option>
+                  <option value="X">X</option>
+                  <option value="XI">XI</option>
+                  <option value="XII">XII</option>
+                </select>
               </div>
+
+              <div class="mb-3">
+                <label for="selectNama" class="form-label">Nama</label>
+                <select id="selectNama" class="form-select">
+                  <option value="">Pilih Nama</option>
+                  <option value="abidin">Abidin</option>
+                  <option value="rakha">Raka OTW FULLSTACK</option>
+                  <option value="sadik">Sadik FUNK</option>
+                </select>
+              </div>
+
+              <button
+                class="btn btn-primary"
+                onclick="printDiv('main-content')"
+              >
+                Print
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.min.js"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/BukuInduk.js"></script>
     <script src="js/sidebar.js"></script>
-    <script src="js/beranda.js"></script>
   </body>
 </html>
