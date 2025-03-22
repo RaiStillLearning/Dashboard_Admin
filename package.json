@@ -2,5 +2,23 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "gsap": "^3.12.7"
-  }
+  },
+  "name": "dashboard_admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaiStillLearning/Dashboard_Admin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaiStillLearning/Dashboard_Admin/issues"
+  },
+  "homepage": "https://github.com/RaiStillLearning/Dashboard_Admin#readme"
 }
